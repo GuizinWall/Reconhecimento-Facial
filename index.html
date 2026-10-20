@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconhecimento Facial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Reconhecimento Facial</h1>
+        <p>Cadastro e identificação de pessoas autorizadas</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Câmera</h2>
+
+            <video id="camera" autoplay muted playsinline></video>
+
+            <button id="btnCamera">Ativar câmera</button>
+            <p id="cameraStatus">A câmera está desligada.</p>
+        </section>
+
+        <section class="card">
+            <h2>Cadastrar pessoa</h2>
+
+            <label for="nome">Nome da pessoa</label>
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite o nome"
+                maxlength="80"
+            >
+
+            <label class="consentimento">
+                <input type="checkbox" id="consentimento">
+                A pessoa autorizou o cadastro do rosto.
+            </label>
+
+            <button id="btnCadastrar" disabled>
+                Cadastrar rosto
+            </button>
+        </section>
+
+        <section class="card">
+            <h2>Reconhecer pessoa</h2>
+
+            <button id="btnReconhecer" disabled>
+                Reconhecer rosto
+            </button>
+
+            <p id="resultado">
+                Nenhum reconhecimento realizado.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Pessoas cadastradas</h2>
+            <ul id="listaPessoas"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto de reconhecimento facial para testes locais.</p>
+        <p>Os dados biométricos não devem ser enviados ao GitHub.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
